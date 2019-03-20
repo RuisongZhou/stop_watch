@@ -1,0 +1,551 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.04 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.05 secs
+ 
+--> Reading design: counter.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "counter.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "counter"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : counter
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "F:\FPGAcode\stop_watch\counter.v" into library work
+Parsing module <counter>.
+WARNING:HDLCompiler:751 - "F:\FPGAcode\stop_watch\counter.v" Line 30: Redeclaration of ansi port display is not allowed
+WARNING:HDLCompiler:751 - "F:\FPGAcode\stop_watch\counter.v" Line 35: Redeclaration of ansi port out_display is not allowed
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <counter>.
+WARNING:HDLCompiler:413 - "F:\FPGAcode\stop_watch\counter.v" Line 50: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "F:\FPGAcode\stop_watch\counter.v" Line 71: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "F:\FPGAcode\stop_watch\counter.v" Line 75: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "F:\FPGAcode\stop_watch\counter.v" Line 93: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "F:\FPGAcode\stop_watch\counter.v" Line 96: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <counter>.
+    Related source file is "F:\FPGAcode\stop_watch\counter.v".
+    Found 1-bit register for signal <cn>.
+    Found 4-bit register for signal <AN0>.
+    Found 4-bit register for signal <AN1>.
+    Found 4-bit register for signal <AN2>.
+    Found 4-bit register for signal <AN3>.
+    Found 16-bit register for signal <cnt>.
+    Found 30-bit register for signal <q>.
+    Found 4-bit register for signal <display>.
+    Found 30-bit adder for signal <q[29]_GND_1_o_add_1_OUT> created at line 45.
+    Found 4-bit adder for signal <AN1[3]_GND_1_o_add_10_OUT> created at line 71.
+    Found 4-bit adder for signal <AN0[3]_GND_1_o_add_12_OUT> created at line 75.
+    Found 4-bit adder for signal <AN3[3]_GND_1_o_add_21_OUT> created at line 93.
+    Found 4-bit adder for signal <AN2[3]_GND_1_o_add_23_OUT> created at line 96.
+    Found 16-bit adder for signal <cnt[15]_GND_1_o_add_28_OUT> created at line 104.
+    Found 16x8-bit Read Only RAM for signal <out_display>
+WARNING:Xst:737 - Found 1-bit latch for signal <type_temp<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <type_temp<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <type_temp<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <type_temp<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 30-bit comparator lessequal for signal <n0000> created at line 42
+    Summary:
+	inferred   1 RAM(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred  67 D-type flip-flop(s).
+	inferred   4 Latch(s).
+	inferred   1 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <counter> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x8-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 6
+ 16-bit adder                                          : 1
+ 30-bit adder                                          : 1
+ 4-bit adder                                           : 4
+# Registers                                            : 8
+ 1-bit register                                        : 1
+ 16-bit register                                       : 1
+ 30-bit register                                       : 1
+ 4-bit register                                        : 5
+# Latches                                              : 4
+ 1-bit latch                                           : 4
+# Comparators                                          : 1
+ 30-bit comparator lessequal                           : 1
+# Multiplexers                                         : 4
+ 30-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <counter>.
+The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
+The following registers are absorbed into counter <q>: 1 register on signal <q>.
+The following registers are absorbed into counter <AN2>: 1 register on signal <AN2>.
+The following registers are absorbed into counter <AN1>: 1 register on signal <AN1>.
+The following registers are absorbed into counter <AN0>: 1 register on signal <AN0>.
+The following registers are absorbed into counter <AN3>: 1 register on signal <AN3>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_out_display> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <type_temp>     |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <out_display>   |          |
+    -----------------------------------------------------------------------
+Unit <counter> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x8-bit single-port distributed Read Only RAM        : 1
+# Counters                                             : 6
+ 16-bit up counter                                     : 1
+ 30-bit up counter                                     : 1
+ 4-bit up counter                                      : 4
+# Registers                                            : 5
+ Flip-Flops                                            : 5
+# Comparators                                          : 1
+ 30-bit comparator lessequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <counter> ...
+WARNING:Xst:1710 - FF/Latch <AN3_3> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN3_1> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN3_0> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN0_3> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN0_2> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN0_1> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN0_0> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN1_3> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN1_2> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN1_1> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN1_0> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN2_3> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN2_2> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN2_1> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN2_0> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_29> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_28> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_27> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_26> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_25> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_24> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_23> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_22> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_21> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_20> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <q_19> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cn> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <AN3_2> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <q_0> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_1> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_2> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_3> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_4> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_5> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_6> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_7> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_8> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_9> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_10> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_11> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_12> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_13> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_14> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_15> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_16> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_17> of sequential type is unconnected in block <counter>.
+WARNING:Xst:2677 - Node <q_18> of sequential type is unconnected in block <counter>.
+WARNING:Xst:1710 - FF/Latch <type_temp_3> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <type_temp_0> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <type_temp_2> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <type_temp_1> (without init value) has a constant value of 0 in block <counter>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block counter, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 20
+ Flip-Flops                                            : 20
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : counter.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 49
+#      GND                         : 1
+#      INV                         : 1
+#      LUT1                        : 15
+#      MUXCY                       : 15
+#      VCC                         : 1
+#      XORCY                       : 16
+# FlipFlops/Latches                : 20
+#      FDC                         : 17
+#      FDP                         : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 14
+#      IBUF                        : 1
+#      OBUF                        : 13
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              20  out of  126800     0%  
+ Number of Slice LUTs:                   16  out of  63400     0%  
+    Number used as Logic:                16  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     20
+   Number with an unused Flip Flop:       0  out of     20     0%  
+   Number with an unused LUT:             4  out of     20    20%  
+   Number of fully used LUT-FF pairs:    16  out of     20    80%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          16
+ Number of bonded IOBs:                  15  out of    210     7%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+cnt_15                             | NONE(display_0)        | 4     |
+CLK                                | BUFGP                  | 16    |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 1.806ns (Maximum Frequency: 553.618MHz)
+   Minimum input arrival time before clock: 0.717ns
+   Maximum output required time after clock: 0.645ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'cnt_15'
+  Clock period: 0.653ns (frequency: 1532.567MHz)
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               0.653ns (Levels of Logic = 0)
+  Source:            display_3 (FF)
+  Destination:       display_0 (FF)
+  Source Clock:      cnt_15 rising
+  Destination Clock: cnt_15 rising
+
+  Data Path: display_3 to display_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              2   0.361   0.283  display_3 (display_3)
+     FDC:D                     0.008          display_0
+    ----------------------------------------
+    Total                      0.653ns (0.369ns logic, 0.283ns route)
+                                       (56.6% logic, 43.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 1.806ns (frequency: 553.618MHz)
+  Total number of paths / destination ports: 136 / 16
+-------------------------------------------------------------------------
+Delay:               1.806ns (Levels of Logic = 17)
+  Source:            cnt_0 (FF)
+  Destination:       cnt_15 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: cnt_0 to cnt_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.361   0.279  cnt_0 (cnt_0)
+     INV:I->O              1   0.113   0.000  Mcount_cnt_lut<0>_INV_0 (Mcount_cnt_lut<0>)
+     MUXCY:S->O            1   0.353   0.000  Mcount_cnt_cy<0> (Mcount_cnt_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<1> (Mcount_cnt_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<2> (Mcount_cnt_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<3> (Mcount_cnt_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<4> (Mcount_cnt_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<5> (Mcount_cnt_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<6> (Mcount_cnt_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<7> (Mcount_cnt_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<8> (Mcount_cnt_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<9> (Mcount_cnt_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<10> (Mcount_cnt_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<11> (Mcount_cnt_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<12> (Mcount_cnt_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_cnt_cy<13> (Mcount_cnt_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  Mcount_cnt_cy<14> (Mcount_cnt_cy<14>)
+     XORCY:CI->O           1   0.370   0.000  Mcount_cnt_xor<15> (Result<15>)
+     FDC:D                     0.008          cnt_15
+    ----------------------------------------
+    Total                      1.806ns (1.527ns logic, 0.279ns route)
+                                       (84.5% logic, 15.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'cnt_15'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              0.717ns (Levels of Logic = 1)
+  Source:            CLR (PAD)
+  Destination:       display_0 (FF)
+  Destination Clock: cnt_15 rising
+
+  Data Path: CLR to display_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.001   0.367  CLR_IBUF (CLR_IBUF)
+     FDC:CLR                   0.349          display_0
+    ----------------------------------------
+    Total                      0.717ns (0.350ns logic, 0.367ns route)
+                                       (48.8% logic, 51.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              0.717ns (Levels of Logic = 1)
+  Source:            CLR (PAD)
+  Destination:       cnt_0 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: CLR to cnt_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.001   0.367  CLR_IBUF (CLR_IBUF)
+     FDC:CLR                   0.349          cnt_0
+    ----------------------------------------
+    Total                      0.717ns (0.350ns logic, 0.367ns route)
+                                       (48.8% logic, 51.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'cnt_15'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              0.645ns (Levels of Logic = 1)
+  Source:            display_3 (FF)
+  Destination:       display<3> (PAD)
+  Source Clock:      cnt_15 rising
+
+  Data Path: display_3 to display<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              2   0.361   0.283  display_3 (display_3)
+     OBUF:I->O                 0.000          display_3_OBUF (display<3>)
+    ----------------------------------------
+    Total                      0.645ns (0.361ns logic, 0.283ns route)
+                                       (56.0% logic, 44.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    1.806|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock cnt_15
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+cnt_15         |    0.653|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 17.62 secs
+ 
+--> 
+
+Total memory usage is 4682628 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   62 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

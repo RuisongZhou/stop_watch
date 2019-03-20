@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=F:\FPGAcode\stop_watch\counter.ncd
+OUTFILE=F:\FPGAcode\stop_watch\counter.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=F:\FPGAcode\stop_watch
+LICENSE=WebPack
+USER_INFO=__0_0_0
